@@ -1,21 +1,80 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Theme.ToDoApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <item name="android:windowIsTranslucent">true</item>
+    <style name="Base.Theme.ToDo" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">#254875</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="floatingActionButtonStyle">@style/fab_style</item>
+        <item name="android:homeAsUpIndicator">@drawable/back</item>
+
     </style>
 
-    <style name="background_color">
-        <item name="android:background">@color/green_white</item>
+    <!-- Splash Activity theme. -->
+    <style name="Base.Theme.ToDo.splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/lime</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TimePicker" parent="Widget.Material3.MaterialTimePicker.Clock">
+        <item name="clockFaceBackgroundColor">@color/lime</item>
+        <item name="clockHandColor">@color/blue</item>
+    </style>
+
+    <style name="CustomTextAppearance" parent="TextAppearance.MaterialCalendarWidget.Date">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="toolbar_title_style">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:layout_margin">20dp</item>
     </style>
 
+    <style name="toolbar_style" parent="Base.ThemeOverlay.AppCompat">
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="fab_style" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/fab_rounded</item>
+    </style>
+
+    <style name="fab_rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="background">@drawable/button_bg</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Modal</item>
+    </style>
+
+    <style name="Modal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_bg</item>
+    </style>
+
+    <style name="BottomSheetStyle2" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_bg</item>
+        <!-- Add other style attributes as needed -->
+    </style>
+
+    <style name="CustomTimePickerDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="colorAccent">@color/blue</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.TextButton.Dialog</item>
+
+        <!-- Use alert dialog theme to set button text color -->
+        <item name="materialAlertDialogTheme">@style/CustomAlertDialogTheme</item>
+    </style>
+
+    <style name="CustomAlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <!-- Customize positive and negative button text colors -->
+        <item name="buttonBarPositiveButtonStyle">@style/CustomDialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/CustomDialogButton</item>
+    </style>
+
+    <style name="CustomDialogButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/black</item> <!-- Replace with desired color -->
+    </style>
 
 </resources>
